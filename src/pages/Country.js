@@ -141,7 +141,7 @@ const Country = () => {
             <div className="border">
               {getBorder() ? (
                 getBorder().map((border) => (
-                  <div style={{color:`${theme?"white":"black"}`}}>
+                  <div key={border} style={{color:`${theme?"white":"black"}`}}>
                     <Link to={`/country/${border}`}
 
                     onClick={()=>dispatch(getCountryByName(border))}

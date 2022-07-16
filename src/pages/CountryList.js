@@ -15,15 +15,19 @@ const CountryList = () => {
   const region = useSelector((state) => state.countryReducer.region);
   const [searchTerm, setTerm] = useState("");
 
+  const fetchData = () => {
+    dispatch(fetchAll());
+  };
   useEffect(() => {
-    const fetchData = () => {
-      dispatch(fetchAll());
-    };
-    fetchData();
-  }, [dispatch, theme, region]);
+        fetchData();
+
+
+     
+    
+  }, []);
 
   const isLoading = () => {
-    return <Loading /> 
+    return <Loading />;
   };
 
   return (

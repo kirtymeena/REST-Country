@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CountryList from "./pages/CountryList";
 import {
   BrowserRouter as Router,
@@ -9,6 +9,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import Country from "./pages/Country";
+import { fetchAll } from "./redux/apiCalls/api";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.isDark);

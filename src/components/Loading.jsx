@@ -3,7 +3,7 @@ import React from "react";
 const Loading = () => {
   return (
     <div className="flex__wrapper">
-      <div class="loading">
+      <div className="loading">
         <div className="dot">L</div>
         <div className="dot">O</div>
         <div className="dot">A</div>
