@@ -19,7 +19,6 @@ const CountryList = () => {
     const fetchData = () => {
       dispatch(fetchAll());
     };
-    console.log("loading", loading);
     fetchData();
   }, [dispatch, theme, region]);
 
