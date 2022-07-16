@@ -1,10 +1,10 @@
-import { borders } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getCountryByName } from "../redux/apiCalls/api";
 import {Link} from "react-router-dom"
+
 const Country = () => {
   const params = useParams();
   const getCountries = useSelector((state) => state.countryReducer.country);
