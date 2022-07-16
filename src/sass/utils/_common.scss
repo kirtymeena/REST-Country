@@ -1,0 +1,63 @@
+@use "../utils/breakpoint" as *;
+@use "../utils/variables" as *;
+
+.container {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+
+  @include md {
+    padding-inline: 4rem;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+/* =========== dark theme text =========== */
+.very-light-stone {
+  color: $very-light-stone;
+}
+.light-stone {
+  color: $light-stone;
+}
+.stone {
+  color: $stone;
+}
+
+/* ============ font weight ============ */
+.font-bold {
+  font-weight: $font-bold;
+}
+
+.font-medium {
+  $font-weight: $font-medium;
+}
+
+.font-light {
+  $font-weight: $font-light;
+}
+
+/* ========= font- size =========== */
+
+.sm-text {
+  font-size: 0.7rem;
+}
+.xsm-text {
+  font-size: 0.6rem;
+}
+
+.md-text {
+  font-size: 1rem;
+}
+
+
+.dark-bg{
+  background-color: $dark_light;
+  color:$very-light-stone
+}
+.light-bg{
+  background-color: white;
+  color:$stone
+
+}

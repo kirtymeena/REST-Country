@@ -1,0 +1,43 @@
+@use "../utils/mixin" as *;
+@use "../utils/breakpoint" as *;
+
+.list__wrapper {
+  @include displayFlex($direction: column, $gap:3rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.search__bar{
+  @include displayFlex($direction:column,$gap:2rem);
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    @include md{
+        @include displayFlex($gap:2rem);
+        justify-content: space-between;
+      
+    }
+  
+}
+
+.country__list{
+  @include displayFlex($direction:column);
+  align-items: center;
+  @include md{
+    @include displayFlex($direction:row);
+    
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items: center;
+  }
+}
+
+
+.load__icons{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+}

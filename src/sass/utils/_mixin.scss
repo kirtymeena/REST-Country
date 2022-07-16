@@ -1,0 +1,21 @@
+
+@mixin displayFlex($direction:row,$gap:2rem){
+    display: flex;
+    flex-direction: $direction;
+    gap:$gap
+}
+
+
+@mixin flex-column($gap:2rem){
+        display: flex;
+        flex-direction: column;
+        gap:$gap
+}
+
+@mixin flex-row($gap:2rem){
+    display:  flex;
+    flex-direction: row;
+    gap:$gap;
+}
+
+

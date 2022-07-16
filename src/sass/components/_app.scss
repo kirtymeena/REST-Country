@@ -1,0 +1,14 @@
+@use "../utils/mixin" as *;
+@use "../utils/breakpoint" as *;
+
+.layout{
+    @include displayFlex($direction:column);
+    justify-content: center;
+    align-items: center;
+    @include md{
+        @include displayFlex();
+        justify-content: space-between;
+      
+    }
+    
+}

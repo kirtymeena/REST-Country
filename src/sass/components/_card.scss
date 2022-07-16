@@ -1,0 +1,11 @@
+@use "../utils/variables" as *;
+
+.dark__card {
+  background-color: $dark_light;
+  color: $very-light-stone;
+}
+
+
+.body__text {
+  font-weight: 400;
+}

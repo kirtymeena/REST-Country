@@ -1,0 +1,39 @@
+@use "../utils/mixin" as *;
+@use "../utils/breakpoint" as *;
+@use "../utils/variables" as *;
+
+.nav__header{
+    @include displayFlex();
+    justify-content: space-between;
+    align-items: center;
+    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 0.6rem;
+
+    &__icons{
+    @include displayFlex($gap:0.5rem);
+    justify-content:center;
+    align-items: center;
+    }
+}
+
+.bright,.moon{
+    cursor:pointer;
+    
+}
+
+.dark_nav{
+    background-color: $dark_light;
+}
+.nav__icons{
+    @include displayFlex($gap:0.5rem);
+    justify-content:center;
+    align-items: center;
+}
+
+.nav__text{
+    font-size: 0.7rem;
+    @include md{
+    font-size: 1rem;
+    }
+}

@@ -1,0 +1,50 @@
+@use "../utils/mixin" as *;
+.flex__wrapper{
+    @include displayFlex($direction:row,$gap:3rem);
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+
+.jello-horizontal1 {
+	        animation:  jello-horizontal 0.9s both infinite;
+}
+.jello-horizontal2 {
+	        animation:  jello-horizontal 0.9s both infinite;
+            animation-delay: 0.2s;
+}
+.jello-horizontal3 {
+	        animation:  jello-horizontal 0.9s both infinite;
+            animation-delay: 0.3;
+}
+
+
+
+
+
+ 
+  @keyframes jello-horizontal {
+    0% {
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  
