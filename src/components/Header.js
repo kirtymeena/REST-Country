@@ -14,7 +14,6 @@ const Header = ({ theme }) => {
   };
 
   useEffect(() => {
-    console.log("dark",isDark)
     dispatch(themify(isDark))
   });
 
