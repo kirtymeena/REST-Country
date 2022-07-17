@@ -1,9 +1,9 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getCountryByName } from "../redux/apiCalls/api";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Country = () => {
   const params = useParams();
@@ -14,7 +14,6 @@ const Country = () => {
   const data = useSelector((state) =>
     state.countryReducer.country.filter((c) => c.name.common === params.name)
   );
-
 
   const displayTLD = () => {
     return data[0].tld[0];
@@ -58,17 +57,16 @@ const Country = () => {
         });
       });
     }
+
     return newBorders;
   };
 
-  useEffect(() => {
-   
-  }, [theme]);
+  useEffect(() => {}, [theme]);
 
   return (
     <div className="details__wrapper container">
       <div>
-        <button
+        <div
           onClick={() => navigate(-1)}
           className={`btn ${
             theme ? "dark-bg" : "light-bg"
@@ -90,7 +88,7 @@ const Country = () => {
             </div>{" "}
             <div>Back</div>
           </div>
-        </button>
+        </div>
       </div>
       <div className="country__details">
         <div className="flag">
@@ -133,31 +131,38 @@ const Country = () => {
               <p className="font-bold">Languages:{displayLanguages()}</p>
             </div>
           </div>
-          <div className="border__wrapper">
-            <div>
-              <p className="font-bold">Border Countries:</p>
-            </div>
+          {getBorder().length > 0 && (
+            <div className="border__wrapper">
+              <div>
+                <p className="font-bold">
+                  {getBorder ? "Border Countries" : ""}:
+                </p>
+              </div>
 
-            <div className="border">
-              {getBorder() ? (
-                getBorder().map((border) => (
-                  <div key={border} style={{color:`${theme?"white":"black"}`}}>
-                    <Link to={`/country/${border}`}
-
-                    onClick={()=>dispatch(getCountryByName(border))}
-                      className={`btn-border link ${
-                        theme ? "btn-dark" : "btn-light"
-                      }`}
+              <div className="border">
+                {getBorder() ? (
+                  getBorder().map((border) => (
+                    <div
+                      key={border}
+                      style={{ color: `${theme ? "white" : "black"}` }}
                     >
-                      <span className="body__text">{border}</span>
-                    </Link>
-                  </div>
-                ))
-              ) : (
-                <p>No border</p>
-              )}
+                      <Link
+                        to={`/country/${border}`}
+                        onClick={() => dispatch(getCountryByName(border))}
+                        className={`btn-border link ${
+                          theme ? "btn-dark" : "btn-light"
+                        }`}
+                      >
+                        <span className="body__text">{border}</span>
+                      </Link>
+                    </div>
+                  ))
+                ) : (
+                  <p>No border</p>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

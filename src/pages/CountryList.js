@@ -31,7 +31,7 @@ const CountryList = () => {
   };
 
   return (
-    <div className="container list__wrapper">
+    <section className="container list__wrapper">
       {loading ? (
         isLoading()
       ) : (
@@ -116,7 +116,7 @@ const CountryList = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const CardLayout = ({ name, flag, population, region, capital }) => {
   const theme = useSelector((state) => state.themeReducer.isDark);
   return (
-    <div>
+    <article>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea
           style={{
@@ -20,7 +20,7 @@ const CardLayout = ({ name, flag, population, region, capital }) => {
               " rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
           }}
         >
-          <CardMedia component="img" height="140" image={flag} alt="flag" />
+          <CardMedia component="img" className="flag-img" height="140"  image={flag} alt="flag" />
           <CardContent className={`${theme ? "dark__card" : "light__card"}`}>
             <Typography gutterBottom variant="h5" component="div">
               {name}
@@ -48,7 +48,7 @@ const CardLayout = ({ name, flag, population, region, capital }) => {
           </CardContent>
         </CardActionArea>
       </Card>
-    </div>
+    </article>
   );
 };
 
